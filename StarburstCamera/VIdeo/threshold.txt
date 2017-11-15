@@ -1,0 +1,4 @@
+kernel vec4 thresholdFilter(__sample pixel, float threshold) {
+    float luma = (pixel.r + pixel.r + pixel.b + pixel.g + pixel.g + pixel.g) / 6.0;
+    return luma > threshold ? pixel : vec4(0.0, 0.0, 0.0, 0.0);
+}
